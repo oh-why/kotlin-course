@@ -106,8 +106,8 @@ fun main() {
         for (k in 1..10) {
             print(i*k)
             print(" ")
-            if (k == 10) println()
         }
+        println()
     }
 
     example2(4)
