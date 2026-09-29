@@ -6,7 +6,7 @@ fun main() {
     e1("Произошла катастрофа на сервере")
     e1("Этот код работает без проблем")
     e1("Удача")
-    e2("2021-12-01 09:48:23")
+    e2("Пользователь вошел в систему -> 2021-12-01 09:48:23")
     e3("4539 1488 0343 6467")
     e4("username@example.com")
     e5("C:/Пользователи/Документы/report.txt")
@@ -57,7 +57,7 @@ fun e1(arg: String) {
 // строки и сразу распечатай их по очереди. Используй indexOf или split для получения правой части
 // сообщения.
 fun e2(arg: String) {
-    val datetimeArr = arg.split(" ")
+    val datetimeArr = arg.split(" -> ")[1].split(" ")
     println(datetimeArr[0])
     println(datetimeArr[1])
 }
@@ -65,7 +65,7 @@ fun e2(arg: String) {
 //Дана строка с номером кредитной карты, например "4539 1488 0343 6467". Замаскируйте все цифры,
 // кроме последних четырех, символами "*".
 fun e3(arg: String) {
-    val revealedChars = arg.substring(15, 19)
+    val revealedChars = arg.substring(arg.length - 4)
     println("**** **** **** $revealedChars")
 }
 //4. Форматирование адреса электронной почты.

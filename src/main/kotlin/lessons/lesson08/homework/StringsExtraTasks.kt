@@ -18,13 +18,9 @@ fun correctCases(arg: String) {
     val arr = arg.split(" ")
     var newLine = ""
     for (word in arr) {
-        newLine += word[0].uppercase()
-        for (i in 1 until word.length) {
-            newLine += word[i].lowercase()
-        }
-        newLine += " "
+        newLine += "${word[0].uppercase()}${word.substring(1).lowercase()} "
     }
-    println(newLine)
+    println(newLine.trim()) // убираем последний пробел
 }
 //8. Игра в разведчика
 //Напишите шифратор/дешифратор для строки. Шифровка производится путём замены двух соседних букв
@@ -46,14 +42,11 @@ fun encrypt(arg: String) {
 }
 
 fun decrypt(arg: String) {
-    var value = arg
-    if (arg.length % 2 != 0) {
-        value += " "
-    }
     var result = ""
-    for (i in 0 until value.length step 2) {
-        result += value[i+1]
-        result += value[i]
+    // не нужна проверка четности, тк шифрованное уже четное
+    for (i in 0 until arg.length step 2) {
+        result += arg[i+1]
+        result += arg[i]
     }
     println(result)
 }
