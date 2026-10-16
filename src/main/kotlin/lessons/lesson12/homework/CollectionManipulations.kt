@@ -45,9 +45,9 @@ fun main() {
     //Отсортировать список в алфавитном порядке
     println(e4.sorted())
     //Взять первые 3 элемента списка
-    println(e2.take(4))
+    println(e2.take(3))
     //Распечатать квадраты элементов списка
-    println(e2.map { it * it })
+    println(e2.forEach() { it * it })
     //Группировать список по первой букве слов
     println(e4.groupBy { it[0] })
     //Очистить список от дублей
@@ -164,7 +164,9 @@ fun avgWordLength(arg: List<String>): String {
 //Цель: Отобрать уникальные числа, отсортировать по убыванию и сгруппировать по четности
 // (“четные” и “нечетные”).
 fun numCategories(arg: List<Int>): Map<String, List<Int>> {
-    return arg.distinct().sortedDescending().groupBy { if (it % 2 == 0) "четные" else "нечетные" }
+    return arg.distinct()
+        .sortedDescending()
+        .groupBy { if (it % 2 == 0) "четные" else "нечетные" }
 }
 
 //Задание 29: Поиск первого подходящего элемента
